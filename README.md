@@ -20,11 +20,11 @@ _For my not so technological advanced friends, download [Python 3](https://www.p
 	PASSWORD="your-password"
 	```
 
-	For example, _naman.219301543@muj.manipal.edu_ will be
+	For example, _naman.219301542@muj.manipal.edu_ will be
 	
 	```
 	NAME="naman"
-	REGISTRATION_NUMBER="219301543"
+	REGISTRATION_NUMBER="219301542"
 	PASSWORD="baniyaBro7*"
 	```
 
