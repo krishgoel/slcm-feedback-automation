@@ -1,12 +1,12 @@
 # Semester-End Feedback Automation Script
+An automation script for filling out semester-end feedback on my college portal - [SLCM](https://mujslcm.jaipur.manipal.edu:122/) at [Manipal, Jaipur](https://jaipur.manipal.edu/). If you need help with a similar task for a different college, feel free to reach out to me!
 
 ## Steps to Run the Script on Your Computer
-Before you try to run this on your machine, ensure that you have Python and pip installed in your environment 
+Before you try to run this on your machine, ensure that you have Python and pip installed in your environment.
 
-For my not so technological advanced friends, download [Python 3](https://www.python.org/downloads/) and [pip](https://phoenixnap.com/kb/install-pip-windows)).
+_For my not so technological advanced friends, download [Python 3](https://www.python.org/downloads/) and [pip](https://phoenixnap.com/kb/install-pip-windows)._
 
 ### 1. Clone this repository
-> PS: These commands are to be run on the terminal 
 1. Open up the terminal on your computer.
 2. Type in the following command: ```git clone https://github.com/KrishGoel/slcm-feedback-automation.git```
 3. Then type in this command: ```cd slcm-feedback-automation```
@@ -28,7 +28,7 @@ For my not so technological advanced friends, download [Python 3](https://www.py
 	PASSWORD="baniyaBro7*"
 	```
 
-3. Save the file as .env in the same directory as the script.
+3. Save the file as ```.env``` in the same directory as the script.
 
 ### 3. Run the script
 1. Make sure you're in the slcm-feedback-automation directory in the terminal.
