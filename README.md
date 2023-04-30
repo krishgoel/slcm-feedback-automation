@@ -30,7 +30,10 @@ _For my not so technological advanced friends, download [git](https://git-scm.co
 
 3. Save the file as ```.env``` in the same directory as the script.
 
-### 3. Run the script
+### 3. Install the required libraries
+1. Run this command: ```pip install python-dotenv selenium```
+
+### 4. Run the script
 1. Make sure you're in the slcm-feedback-automation directory in the terminal.
 2. Type in the following command: ```python ./script.py```
 3. Press enter, and the script will run!
