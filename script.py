@@ -13,7 +13,7 @@ from selenium.webdriver.chrome.options import Options
 chrome_options = Options()
 if system_platform == "Windows":
 	chrome_options.add_experimental_option("detach", True)
-	browser = webdriver.Chrome('drivers/chromedriver.exe', chrome_options=chrome_options)
+	browser = webdriver.Chrome(options=chrome_options)
 if system_platform == "Darwin":
 	chrome_options.binary_location = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
 	browser = webdriver.Chrome(options=chrome_options)
