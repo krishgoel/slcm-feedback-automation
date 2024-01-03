@@ -1,6 +1,9 @@
 from dotenv import load_dotenv
 from selenium import webdriver
 
+import platform
+system_platform = platform.system()
+
 load_dotenv()
 import os
 USERNAME = (f"{os.getenv('NAME')}.{os.getenv('REGISTRATION_NUMBER')}").lower()
@@ -8,8 +11,12 @@ PASSWORD = os.getenv("PASSWORD")
 
 from selenium.webdriver.chrome.options import Options
 chrome_options = Options()
-chrome_options.add_experimental_option("detach", True)
-browser = webdriver.Chrome('drivers/chromedriver.exe', chrome_options=chrome_options)
+if system_platform == "Windows":
+	chrome_options.add_experimental_option("detach", True)
+	browser = webdriver.Chrome('drivers/chromedriver.exe', chrome_options=chrome_options)
+if system_platform == "Darwin":
+	chrome_options.binary_location = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
+	browser = webdriver.Chrome(options=chrome_options)
 
 def login(loginPage = "https://mujslcm.jaipur.manipal.edu:122/Home/Index"):
 	browser.get(loginPage)
