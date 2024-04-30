@@ -1,12 +1,11 @@
-from dotenv import load_dotenv
 from selenium import webdriver
 
 import platform
 system_platform = platform.system()
 
-load_dotenv()
 import os
-USERNAME = (f"{os.getenv('NAME')}.{os.getenv('REGISTRATION_NUMBER')}").lower()
+
+USERNAME = os.getenv("NAME") + "." + os.getenv("REGISTRATION_NUMBER")
 PASSWORD = os.getenv("PASSWORD")
 
 from selenium.webdriver.chrome.options import Options
@@ -44,37 +43,29 @@ feedbacks = listAllFeedbacks()
 def fillFeedback(courseLink):
 	browser.get(courseLink)
 
-	# Select "No" on all radio buttons
-	no_buttons = browser.find_elements("xpath", "//input[@type='radio' and not(@class='yescheck')]")
-	print("No buttons: ", len(no_buttons))
+	no_buttons = browser.find_elements("xpath", "//input[@type='radio' and @class='yescheck']")
 	for button in no_buttons:
 		button.click()
 	
-	# Select "No" on all select boxes
 	from selenium.webdriver.support.ui import Select
 	dropdowns = browser.find_elements("xpath", "//select")
-	print("Dropdowns: ", len(dropdowns))
 	for dropdown in dropdowns:
 		select = Select(dropdown)
-		select.select_by_value("N")
+		select.select_by_value("Y")
 	
-	# Enter a message into the text box
 	text_box = browser.find_element("xpath", "//textarea")
-	text_box.send_keys("Filled by an automated script :)")
+	text_box.send_keys("Great Experience.")
 	
-	# Submit Form
 	submit_button = browser.find_element("xpath", "//button[@id='btnSubmit']")
 	submit_button.click()
 
-	# Back to feedback page
 	browser.get("https://mujslcm.jaipur.manipal.edu:122/Student/Survey/FeedbackList")
 
-print("Feedbacks:", feedbacks, "\n\n")
+feedbacks = listAllFeedbacks()
+
 for feedback in feedbacks:
 	if (feedback["status"] == "Pending"):
 		fillFeedback(feedback["link"])
-		print(f"Filled feedback for {feedback['link']}\n")
 		feedback["status"] = "Completed"
-		# print("Feedbacks Now:", feedbacks, "\n\n")
 	else:
 		continue
