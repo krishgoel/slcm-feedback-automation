@@ -4,6 +4,8 @@ import platform
 system_platform = platform.system()
 
 import os
+from dotenv import load_dotenv
+load_dotenv()
 
 USERNAME = os.getenv("NAME") + "." + os.getenv("REGISTRATION_NUMBER")
 PASSWORD = os.getenv("PASSWORD")
