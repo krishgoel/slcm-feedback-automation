@@ -1,35 +1,45 @@
 # Semester-End Feedback Automation Script
-An automation script for filling out semester-end feedback on my college portal - [SLCM](https://mujslcm.jaipur.manipal.edu:122/) at [Manipal, Jaipur](https://jaipur.manipal.edu/). If you need help with a similar task for a different college, feel free to reach out to me!
 
-## Steps to Run the Script on Your Computer
-Before you try to run this on your machine, ensure that you have Python and pip installed in your environment.
+This script automates filling out the semester-end feedback form on the [SLCM portal](https://mujslcm.jaipur.manipal.edu/) for students at [Manipal University Jaipur](https://jaipur.manipal.edu/).  
 
-_For my not so technological advanced friends, download [git](https://git-scm.com/downloads) (not super necessary but helpful to have), [Python 3](https://www.python.org/downloads/) and [pip](https://phoenixnap.com/kb/install-pip-windows)._
+## Prerequisites
 
-1. Clone this repository ```git clone https://github.com/KrishGoel/slcm-feedback-automation.git``` (or you can [download it as a zip file from here](https://github.com/KrishGoel/slcm-feedback-automation))
+Make sure Python 3 and pip are installed.  
+Optional but recommended: install [Git](https://git-scm.com/downloads).
 
-2. Create an Environment Variables File
-	1. Open up a text editor on your computer.
-	2. Type in the following text, replacing the parts in quotes with your own information:
-		```
-		NAME="your-name"
-		REGISTRATION_NUMBER="your-registration-number"
-		PASSWORD="your-password"
-		```
+If you're new to this stuff, install:
 
-		For example, somesh.219301542@muj.manipal.edu_ will be
-		```
-		NAME="somesh"
-		REGISTRATION_NUMBER="219301542"
-		PASSWORD="baniyaBro7*"
-		```
+- [Python 3](https://www.python.org/downloads/)
+- [pip](https://phoenixnap.com/kb/install-pip-windows)
+- [Git](https://git-scm.com/downloads)
 
-	3. Save the file as ```.env``` in the same directory as the script.
+## Setup Instructions
 
-3. Install the required libraries: ```pip install -r requirements.txt```
+1. **Clone the repository**
+	```bash
+	git clone https://github.com/KrishGoel/slcm-feedback-automation.git
+	```
+	Or [download it as a zip](https://github.com/KrishGoel/slcm-feedback-automation) and extract it.
 
-4. Run the script
-	1. Make sure you're in the slcm-feedback-automation directory in the terminal.
-	2. Run the script: ```python script.py```
+2. **Create a `.env` file**  
+   Create a file named `.env` in the root directory of the project.  
+   Add your credentials in the following format (provided in [`.env.example`](/.env.example)):
+	```env
+	NAME="krish"
+	REGISTRATION_NUMBER="219310342"
+	PASSWORD="NiceNiceNice3*"
+	```
+	Replace `NAME` and `REGISTRATION_NUMBER` with your name and registration number.
 
-## Voila
+3. **Install Dependencies**
+   Open a terminal in the project directory and run (ideally in a virtual environment):
+	```bash
+	pip install -r requirements.txt
+	```
+
+4. **Run the Script**
+   In the terminal, run:
+	```bash
+	python main.py
+	```
+   This will open a browser window and start filling out the feedback form automatically.
