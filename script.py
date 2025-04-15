@@ -19,7 +19,7 @@ if system_platform == "Darwin":
 	chrome_options.binary_location = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
 	browser = webdriver.Chrome(options=chrome_options)
 
-def login(loginPage = "https://mujslcm.jaipur.manipal.edu:122/Home/Index"):
+def login(loginPage = "https://mujslcm.jaipur.manipal.edu/"):
 	browser.get(loginPage)
 
 	username_field = browser.find_element("name", "UserName")
@@ -32,7 +32,7 @@ def login(loginPage = "https://mujslcm.jaipur.manipal.edu:122/Home/Index"):
 
 login()
 
-def listAllFeedbacks(feedbackPage= "https://mujslcm.jaipur.manipal.edu:122/Student/Survey/FeedbackList"):
+def listAllFeedbacks(feedbackPage= "https://mujslcm.jaipur.manipal.edu/Student/Survey/FeedbackList"):
 	browser.get(feedbackPage)
 	feedbacksFetch = browser.find_elements("class name", "btn-clean")
 
@@ -61,7 +61,7 @@ def fillFeedback(courseLink):
 	submit_button = browser.find_element("xpath", "//button[@id='btnSubmit']")
 	submit_button.click()
 
-	browser.get("https://mujslcm.jaipur.manipal.edu:122/Student/Survey/FeedbackList")
+	browser.get("https://mujslcm.jaipur.manipal.edu/Student/Survey/FeedbackList")
 
 feedbacks = listAllFeedbacks()
 
